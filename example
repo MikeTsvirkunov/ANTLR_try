@@ -1,0 +1,18 @@
+SpaceShip capable ForwardMove 
+SpaceShip capable LeftRotate
+SpaceShip capable RightRotate
+SpaceShip capable RocketLaunch
+SpaceShip capable CollectItem
+SpaceShip capable BeDestroid
+
+RocketLaunch include Shoot
+ForwardMove include Move
+LeftRotate include Rotate
+RightRotate include Rotate
+
+ForwardMove call FuelLose
+BeDestroid call LeftWreckage
+CheckCollision call GetDamage
+
+Game must CheckCollision when ForwardMove
+Game must IsDead
