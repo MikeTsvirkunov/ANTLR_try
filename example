@@ -1,18 +1,31 @@
+add SpaceShip as PC
+add Pirate as NPC
+
 SpaceShip capable ForwardMove 
 SpaceShip capable LeftRotate
 SpaceShip capable RightRotate
 SpaceShip capable RocketLaunch
 SpaceShip capable CollectItem
-SpaceShip capable BeDestroid
+SpaceShip capable GetDamage
+SpaceShip capable SpaceShipBeDestroid
+
+Pirate capable ForwardMove 
+Pirate capable LeftRotate
+Pirate capable RightRotate
+Pirate capable RocketLaunch
+Pirate capable CollectItem
+Pirate capable GetDamage
+Pirate capable BeDestroid
 
 RocketLaunch include Shoot
 ForwardMove include Move
 LeftRotate include Rotate
 RightRotate include Rotate
 
-ForwardMove call FuelLose
-BeDestroid call LeftWreckage
-CheckCollision call GetDamage
+FuelLose after ForwardMove 
+LeftWreckage after BeDestroid
+LeftWreckage after SpaceShipBeDestroid
+GetDamage after CheckCollision
 
 Game must CheckCollision when ForwardMove
-Game must IsDead
+Game must IsDead when SpaceShipBeDestroid 
