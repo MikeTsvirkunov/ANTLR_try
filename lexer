@@ -1,10 +1,14 @@
+
+// DELETE THIS CONTENT IF YOU PUT COMBINED GRAMMAR IN Parser TAB
 lexer grammar ExprLexer;
 
 CAPABLE : 'capable' ;
 INCLUDE : 'include' ;
-CALL : 'call' ;
 MUST : 'must' ;
 WHEN : 'when' ;
+ADD : 'add' ;
+AS : 'as' ;
+AFTER : 'after' ;
 
 
 ID: [a-zA-Z_]+ ;
