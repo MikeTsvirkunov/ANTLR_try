@@ -4,7 +4,8 @@ options { tokenVocab=ExprLexer; }
 game
     :(
         includeDefenition
-        | callDefenition 
+        | afterDefenition
+        | addDefenition
         | mustDefenition 
         | capableDefenition
     )
@@ -14,6 +15,8 @@ capableDefenition : ID CAPABLE ID;
 
 includeDefenition : ID INCLUDE ID;
 
-callDefenition : ID CALL ID;
+addDefenition : ADD ID AS ID;
+
+afterDefenition : ID AFTER ID;
 
 mustDefenition: ID MUST ID (WHEN ID)*;
